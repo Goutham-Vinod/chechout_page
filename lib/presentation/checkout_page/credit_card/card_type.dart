@@ -1,4 +1,4 @@
-import 'package:checkout_screen_ui/presentation/checkout%20page/credit%20card/credit_card.dart';
+import 'package:checkout_screen_ui/presentation/checkout_page/credit_card/credit_card.dart';
 import 'package:flutter/material.dart';
 
 class CardType extends StatelessWidget {

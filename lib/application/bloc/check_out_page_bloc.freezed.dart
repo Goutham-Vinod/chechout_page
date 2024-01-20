@@ -394,6 +394,7 @@ mixin _$CheckOutPageState {
   String? get cardTypeDetected => throw _privateConstructorUsedError;
   bool? get isCardDetailsFilled => throw _privateConstructorUsedError;
   bool? get isCardVerificationInitiated => throw _privateConstructorUsedError;
+  int? get cardVerificationPercentage => throw _privateConstructorUsedError;
   bool? get isCardVerificationSuccess => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -404,6 +405,7 @@ mixin _$CheckOutPageState {
             String? cardTypeDetected,
             bool? isCardDetailsFilled,
             bool? isCardVerificationInitiated,
+            int? cardVerificationPercentage,
             bool? isCardVerificationSuccess)
         initial,
   }) =>
@@ -417,6 +419,7 @@ mixin _$CheckOutPageState {
             String? cardTypeDetected,
             bool? isCardDetailsFilled,
             bool? isCardVerificationInitiated,
+            int? cardVerificationPercentage,
             bool? isCardVerificationSuccess)?
         initial,
   }) =>
@@ -430,6 +433,7 @@ mixin _$CheckOutPageState {
             String? cardTypeDetected,
             bool? isCardDetailsFilled,
             bool? isCardVerificationInitiated,
+            int? cardVerificationPercentage,
             bool? isCardVerificationSuccess)?
         initial,
     required TResult orElse(),
@@ -470,6 +474,7 @@ abstract class $CheckOutPageStateCopyWith<$Res> {
       String? cardTypeDetected,
       bool? isCardDetailsFilled,
       bool? isCardVerificationInitiated,
+      int? cardVerificationPercentage,
       bool? isCardVerificationSuccess});
 }
 
@@ -492,6 +497,7 @@ class _$CheckOutPageStateCopyWithImpl<$Res, $Val extends CheckOutPageState>
     Object? cardTypeDetected = freezed,
     Object? isCardDetailsFilled = freezed,
     Object? isCardVerificationInitiated = freezed,
+    Object? cardVerificationPercentage = freezed,
     Object? isCardVerificationSuccess = freezed,
   }) {
     return _then(_value.copyWith(
@@ -519,6 +525,10 @@ class _$CheckOutPageStateCopyWithImpl<$Res, $Val extends CheckOutPageState>
           ? _value.isCardVerificationInitiated
           : isCardVerificationInitiated // ignore: cast_nullable_to_non_nullable
               as bool?,
+      cardVerificationPercentage: freezed == cardVerificationPercentage
+          ? _value.cardVerificationPercentage
+          : cardVerificationPercentage // ignore: cast_nullable_to_non_nullable
+              as int?,
       isCardVerificationSuccess: freezed == isCardVerificationSuccess
           ? _value.isCardVerificationSuccess
           : isCardVerificationSuccess // ignore: cast_nullable_to_non_nullable
@@ -542,6 +552,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       String? cardTypeDetected,
       bool? isCardDetailsFilled,
       bool? isCardVerificationInitiated,
+      int? cardVerificationPercentage,
       bool? isCardVerificationSuccess});
 }
 
@@ -562,6 +573,7 @@ class __$$InitialImplCopyWithImpl<$Res>
     Object? cardTypeDetected = freezed,
     Object? isCardDetailsFilled = freezed,
     Object? isCardVerificationInitiated = freezed,
+    Object? cardVerificationPercentage = freezed,
     Object? isCardVerificationSuccess = freezed,
   }) {
     return _then(_$InitialImpl(
@@ -589,6 +601,10 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.isCardVerificationInitiated
           : isCardVerificationInitiated // ignore: cast_nullable_to_non_nullable
               as bool?,
+      cardVerificationPercentage: freezed == cardVerificationPercentage
+          ? _value.cardVerificationPercentage
+          : cardVerificationPercentage // ignore: cast_nullable_to_non_nullable
+              as int?,
       isCardVerificationSuccess: freezed == isCardVerificationSuccess
           ? _value.isCardVerificationSuccess
           : isCardVerificationSuccess // ignore: cast_nullable_to_non_nullable
@@ -607,6 +623,7 @@ class _$InitialImpl implements _Initial {
       this.cardTypeDetected,
       this.isCardDetailsFilled,
       this.isCardVerificationInitiated,
+      this.cardVerificationPercentage,
       this.isCardVerificationSuccess})
       : _creditCards = creditCards;
 
@@ -629,11 +646,13 @@ class _$InitialImpl implements _Initial {
   @override
   final bool? isCardVerificationInitiated;
   @override
+  final int? cardVerificationPercentage;
+  @override
   final bool? isCardVerificationSuccess;
 
   @override
   String toString() {
-    return 'CheckOutPageState.initial(creditCards: $creditCards, isUserAddingCard: $isUserAddingCard, selectedCardIndex: $selectedCardIndex, cardTypeDetected: $cardTypeDetected, isCardDetailsFilled: $isCardDetailsFilled, isCardVerificationInitiated: $isCardVerificationInitiated, isCardVerificationSuccess: $isCardVerificationSuccess)';
+    return 'CheckOutPageState.initial(creditCards: $creditCards, isUserAddingCard: $isUserAddingCard, selectedCardIndex: $selectedCardIndex, cardTypeDetected: $cardTypeDetected, isCardDetailsFilled: $isCardDetailsFilled, isCardVerificationInitiated: $isCardVerificationInitiated, cardVerificationPercentage: $cardVerificationPercentage, isCardVerificationSuccess: $isCardVerificationSuccess)';
   }
 
   @override
@@ -655,6 +674,10 @@ class _$InitialImpl implements _Initial {
                     isCardVerificationInitiated) ||
                 other.isCardVerificationInitiated ==
                     isCardVerificationInitiated) &&
+            (identical(other.cardVerificationPercentage,
+                    cardVerificationPercentage) ||
+                other.cardVerificationPercentage ==
+                    cardVerificationPercentage) &&
             (identical(other.isCardVerificationSuccess,
                     isCardVerificationSuccess) ||
                 other.isCardVerificationSuccess == isCardVerificationSuccess));
@@ -669,6 +692,7 @@ class _$InitialImpl implements _Initial {
       cardTypeDetected,
       isCardDetailsFilled,
       isCardVerificationInitiated,
+      cardVerificationPercentage,
       isCardVerificationSuccess);
 
   @JsonKey(ignore: true)
@@ -687,6 +711,7 @@ class _$InitialImpl implements _Initial {
             String? cardTypeDetected,
             bool? isCardDetailsFilled,
             bool? isCardVerificationInitiated,
+            int? cardVerificationPercentage,
             bool? isCardVerificationSuccess)
         initial,
   }) {
@@ -697,6 +722,7 @@ class _$InitialImpl implements _Initial {
         cardTypeDetected,
         isCardDetailsFilled,
         isCardVerificationInitiated,
+        cardVerificationPercentage,
         isCardVerificationSuccess);
   }
 
@@ -710,6 +736,7 @@ class _$InitialImpl implements _Initial {
             String? cardTypeDetected,
             bool? isCardDetailsFilled,
             bool? isCardVerificationInitiated,
+            int? cardVerificationPercentage,
             bool? isCardVerificationSuccess)?
         initial,
   }) {
@@ -720,6 +747,7 @@ class _$InitialImpl implements _Initial {
         cardTypeDetected,
         isCardDetailsFilled,
         isCardVerificationInitiated,
+        cardVerificationPercentage,
         isCardVerificationSuccess);
   }
 
@@ -733,6 +761,7 @@ class _$InitialImpl implements _Initial {
             String? cardTypeDetected,
             bool? isCardDetailsFilled,
             bool? isCardVerificationInitiated,
+            int? cardVerificationPercentage,
             bool? isCardVerificationSuccess)?
         initial,
     required TResult orElse(),
@@ -745,6 +774,7 @@ class _$InitialImpl implements _Initial {
           cardTypeDetected,
           isCardDetailsFilled,
           isCardVerificationInitiated,
+          cardVerificationPercentage,
           isCardVerificationSuccess);
     }
     return orElse();
@@ -787,6 +817,7 @@ abstract class _Initial implements CheckOutPageState {
       final String? cardTypeDetected,
       final bool? isCardDetailsFilled,
       final bool? isCardVerificationInitiated,
+      final int? cardVerificationPercentage,
       final bool? isCardVerificationSuccess}) = _$InitialImpl;
 
   @override
@@ -801,6 +832,8 @@ abstract class _Initial implements CheckOutPageState {
   bool? get isCardDetailsFilled;
   @override
   bool? get isCardVerificationInitiated;
+  @override
+  int? get cardVerificationPercentage;
   @override
   bool? get isCardVerificationSuccess;
   @override

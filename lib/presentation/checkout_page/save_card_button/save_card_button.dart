@@ -24,12 +24,18 @@ class _SaveCardButtonState extends State<SaveCardButton>
       duration: const Duration(milliseconds: 500),
     );
 
-    _saveButtonZoomOutAnimation = Tween<double>(begin: 1, end: 0.25).animate(
+    _saveButtonZoomOutAnimation = Tween<double>(begin: 1, end: 0).animate(
         CurvedAnimation(
             parent: _saveButtonZoomOutAnimationController,
             curve: Curves.easeInOut));
 
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _saveButtonZoomOutAnimationController.dispose();
+    super.dispose();
   }
 
   @override

@@ -18,6 +18,9 @@ class CheckOutPageBloc extends Bloc<CheckOutPageEvent, CheckOutPageState> {
         creditCards = [...state.creditCards];
       }
 
+// Notifying ui to open add credit card widget
+      emit(state.copyWith(isUserAddingCard: true));
+
 //--------------- Detecting credit card type (Fake) ----------------------------
 // let's assume we hot visa as the credit card type..
       if (event.cardNumber?.length == 19) {
@@ -51,12 +54,32 @@ class CheckOutPageBloc extends Bloc<CheckOutPageEvent, CheckOutPageState> {
         }
       }
 //------------------------------------------------------------------------------
-
-      // emit(state.copyWith(creditCards: addedCreditCards));
     });
 
-    on<_VerifyCreditCard>((event, emit) {
-      emit(state.copyWith(isCardVerificationInitiated: true));
+    on<_VerifyCreditCard>((event, emit) async {
+      // Notifying ui to show card verification animation
+      emit(state.copyWith(
+        isCardVerificationInitiated: true,
+      ));
+      // faking the verification percentage using future delayed
+      await Future.delayed(const Duration(milliseconds: 500));
+      int loadingPercentage = 0;
+      for (var i = 0; i < 3; i++) {
+        loadingPercentage += 30;
+        emit(state.copyWith(cardVerificationPercentage: loadingPercentage));
+        await Future.delayed(const Duration(milliseconds: 500));
+      }
+      // Notifying ui to show card verification success animation
+      emit(state.copyWith(
+        isCardVerificationSuccess: true,
+      ));
+// resetting the values - So that the user can add another card
+      await Future.delayed(const Duration(milliseconds: 1500));
+      emit(state.copyWith(
+          isUserAddingCard: false,
+          isCardDetailsFilled: false,
+          isCardVerificationInitiated: false,
+          isCardVerificationSuccess: false));
     });
   }
 }

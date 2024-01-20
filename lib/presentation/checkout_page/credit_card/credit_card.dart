@@ -1,7 +1,6 @@
 import 'package:checkout_screen_ui/application/bloc/check_out_page_bloc.dart';
-import 'package:checkout_screen_ui/presentation/checkout%20page/credit%20card/card_input_form.dart';
-
-import 'package:checkout_screen_ui/presentation/checkout%20page/credit%20card/card_type.dart';
+import 'package:checkout_screen_ui/presentation/checkout_page/credit_card/card_input_form.dart';
+import 'package:checkout_screen_ui/presentation/checkout_page/credit_card/card_type.dart';
 import 'package:flutter/material.dart';
 import 'package:checkout_screen_ui/core/constants.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -69,39 +68,47 @@ class _CreditCardState extends State<CreditCard> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     int cardIndex = 0;
 
-    return BlocListener<CheckOutPageBloc, CheckOutPageState>(
+    return BlocConsumer<CheckOutPageBloc, CheckOutPageState>(
       listener: (context, state) {
         if (state.cardTypeDetected == 'visa') {
           _cardTypeSlideInController.forward();
         }
       },
-      child: ScaleTransition(
-        scale: _cardZoomInAnimation,
-        child: Stack(
-          children: [
-            Container(
-              height: widget.height,
-              width: widget.width,
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Constants.greenColor,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: FadeTransition(
-                opacity: _cardDetailsFadeInAnimation,
-                child: Center(
-                  child: CardInputForm(
-                      creditCardWidth: widget.width,
-                      creditCardHeight: widget.height,
-                      cardIndex: cardIndex),
+      builder: (context, state) {
+        bool creditCardDetailsVisibility =
+            state.isCardVerificationInitiated == true ? false : true;
+        return Visibility(
+          visible: creditCardDetailsVisibility,
+          child: ScaleTransition(
+            scale: _cardZoomInAnimation,
+            child: Stack(
+              children: [
+                Container(
+                  height: widget.height,
+                  width: widget.width,
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: Constants.greenColor,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: FadeTransition(
+                    opacity: _cardDetailsFadeInAnimation,
+                    child: Center(
+                      child: CardInputForm(
+                          creditCardWidth: widget.width,
+                          creditCardHeight: widget.height,
+                          cardIndex: cardIndex),
+                    ),
+                  ),
                 ),
-              ),
+                CardType(
+                    widget: widget,
+                    slideInAnimation: _cardTypeSlideInAnimation),
+              ],
             ),
-            CardType(
-                widget: widget, slideInAnimation: _cardTypeSlideInAnimation),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

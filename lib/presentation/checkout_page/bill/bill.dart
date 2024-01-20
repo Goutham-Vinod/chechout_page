@@ -1,5 +1,6 @@
 import 'package:checkout_screen_ui/domain/models/dummyItems.dart';
-import 'package:checkout_screen_ui/presentation/checkout%20page/bill/other_charges.dart';
+import 'package:checkout_screen_ui/presentation/checkout_page/bill/other_charges.dart';
+
 import 'package:flutter/material.dart';
 
 import 'items_list.dart';

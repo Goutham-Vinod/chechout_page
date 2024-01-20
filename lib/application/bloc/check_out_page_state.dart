@@ -9,6 +9,7 @@ class CheckOutPageState with _$CheckOutPageState {
     String? cardTypeDetected,
     bool? isCardDetailsFilled,
     bool? isCardVerificationInitiated,
+    int? cardVerificationPercentage,
     bool? isCardVerificationSuccess,
   }) = _Initial;
 }
