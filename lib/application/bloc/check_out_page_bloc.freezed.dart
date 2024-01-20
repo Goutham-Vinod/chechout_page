@@ -16,54 +16,49 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CheckOutPageEvent {
-  int get index => throw _privateConstructorUsedError;
-  String? get cardNumber => throw _privateConstructorUsedError;
-  String? get cardHolder => throw _privateConstructorUsedError;
-  String? get securityCode => throw _privateConstructorUsedError;
-  String? get expDate => throw _privateConstructorUsedError;
-  String? get zipCode => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int index, String? cardNumber, String? cardHolder,
+    required TResult Function(String? cardNumber, String? cardHolder,
             String? securityCode, String? expDate, String? zipCode)
-        updateCreditCardDetails,
+        addCreditCard,
+    required TResult Function() verifyCreditCard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int index, String? cardNumber, String? cardHolder,
+    TResult? Function(String? cardNumber, String? cardHolder,
             String? securityCode, String? expDate, String? zipCode)?
-        updateCreditCardDetails,
+        addCreditCard,
+    TResult? Function()? verifyCreditCard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int index, String? cardNumber, String? cardHolder,
+    TResult Function(String? cardNumber, String? cardHolder,
             String? securityCode, String? expDate, String? zipCode)?
-        updateCreditCardDetails,
+        addCreditCard,
+    TResult Function()? verifyCreditCard,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateCreditCardDetails value)
-        updateCreditCardDetails,
+    required TResult Function(_AddCreditCard value) addCreditCard,
+    required TResult Function(_VerifyCreditCard value) verifyCreditCard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateCreditCardDetails value)? updateCreditCardDetails,
+    TResult? Function(_AddCreditCard value)? addCreditCard,
+    TResult? Function(_VerifyCreditCard value)? verifyCreditCard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateCreditCardDetails value)? updateCreditCardDetails,
+    TResult Function(_AddCreditCard value)? addCreditCard,
+    TResult Function(_VerifyCreditCard value)? verifyCreditCard,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $CheckOutPageEventCopyWith<CheckOutPageEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -72,14 +67,6 @@ abstract class $CheckOutPageEventCopyWith<$Res> {
   factory $CheckOutPageEventCopyWith(
           CheckOutPageEvent value, $Res Function(CheckOutPageEvent) then) =
       _$CheckOutPageEventCopyWithImpl<$Res, CheckOutPageEvent>;
-  @useResult
-  $Res call(
-      {int index,
-      String? cardNumber,
-      String? cardHolder,
-      String? securityCode,
-      String? expDate,
-      String? zipCode});
 }
 
 /// @nodoc
@@ -91,58 +78,16 @@ class _$CheckOutPageEventCopyWithImpl<$Res, $Val extends CheckOutPageEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? index = null,
-    Object? cardNumber = freezed,
-    Object? cardHolder = freezed,
-    Object? securityCode = freezed,
-    Object? expDate = freezed,
-    Object? zipCode = freezed,
-  }) {
-    return _then(_value.copyWith(
-      index: null == index
-          ? _value.index
-          : index // ignore: cast_nullable_to_non_nullable
-              as int,
-      cardNumber: freezed == cardNumber
-          ? _value.cardNumber
-          : cardNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cardHolder: freezed == cardHolder
-          ? _value.cardHolder
-          : cardHolder // ignore: cast_nullable_to_non_nullable
-              as String?,
-      securityCode: freezed == securityCode
-          ? _value.securityCode
-          : securityCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      expDate: freezed == expDate
-          ? _value.expDate
-          : expDate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      zipCode: freezed == zipCode
-          ? _value.zipCode
-          : zipCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$UpdateCreditCardDetailsImplCopyWith<$Res>
-    implements $CheckOutPageEventCopyWith<$Res> {
-  factory _$$UpdateCreditCardDetailsImplCopyWith(
-          _$UpdateCreditCardDetailsImpl value,
-          $Res Function(_$UpdateCreditCardDetailsImpl) then) =
-      __$$UpdateCreditCardDetailsImplCopyWithImpl<$Res>;
-  @override
+abstract class _$$AddCreditCardImplCopyWith<$Res> {
+  factory _$$AddCreditCardImplCopyWith(
+          _$AddCreditCardImpl value, $Res Function(_$AddCreditCardImpl) then) =
+      __$$AddCreditCardImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
-      {int index,
-      String? cardNumber,
+      {String? cardNumber,
       String? cardHolder,
       String? securityCode,
       String? expDate,
@@ -150,29 +95,23 @@ abstract class _$$UpdateCreditCardDetailsImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$UpdateCreditCardDetailsImplCopyWithImpl<$Res>
-    extends _$CheckOutPageEventCopyWithImpl<$Res, _$UpdateCreditCardDetailsImpl>
-    implements _$$UpdateCreditCardDetailsImplCopyWith<$Res> {
-  __$$UpdateCreditCardDetailsImplCopyWithImpl(
-      _$UpdateCreditCardDetailsImpl _value,
-      $Res Function(_$UpdateCreditCardDetailsImpl) _then)
+class __$$AddCreditCardImplCopyWithImpl<$Res>
+    extends _$CheckOutPageEventCopyWithImpl<$Res, _$AddCreditCardImpl>
+    implements _$$AddCreditCardImplCopyWith<$Res> {
+  __$$AddCreditCardImplCopyWithImpl(
+      _$AddCreditCardImpl _value, $Res Function(_$AddCreditCardImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? index = null,
     Object? cardNumber = freezed,
     Object? cardHolder = freezed,
     Object? securityCode = freezed,
     Object? expDate = freezed,
     Object? zipCode = freezed,
   }) {
-    return _then(_$UpdateCreditCardDetailsImpl(
-      index: null == index
-          ? _value.index
-          : index // ignore: cast_nullable_to_non_nullable
-              as int,
+    return _then(_$AddCreditCardImpl(
       cardNumber: freezed == cardNumber
           ? _value.cardNumber
           : cardNumber // ignore: cast_nullable_to_non_nullable
@@ -199,17 +138,14 @@ class __$$UpdateCreditCardDetailsImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UpdateCreditCardDetailsImpl implements _UpdateCreditCardDetails {
-  const _$UpdateCreditCardDetailsImpl(
-      {required this.index,
-      this.cardNumber,
+class _$AddCreditCardImpl implements _AddCreditCard {
+  const _$AddCreditCardImpl(
+      {this.cardNumber,
       this.cardHolder,
       this.securityCode,
       this.expDate,
       this.zipCode});
 
-  @override
-  final int index;
   @override
   final String? cardNumber;
   @override
@@ -223,15 +159,14 @@ class _$UpdateCreditCardDetailsImpl implements _UpdateCreditCardDetails {
 
   @override
   String toString() {
-    return 'CheckOutPageEvent.updateCreditCardDetails(index: $index, cardNumber: $cardNumber, cardHolder: $cardHolder, securityCode: $securityCode, expDate: $expDate, zipCode: $zipCode)';
+    return 'CheckOutPageEvent.addCreditCard(cardNumber: $cardNumber, cardHolder: $cardHolder, securityCode: $securityCode, expDate: $expDate, zipCode: $zipCode)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UpdateCreditCardDetailsImpl &&
-            (identical(other.index, index) || other.index == index) &&
+            other is _$AddCreditCardImpl &&
             (identical(other.cardNumber, cardNumber) ||
                 other.cardNumber == cardNumber) &&
             (identical(other.cardHolder, cardHolder) ||
@@ -243,49 +178,51 @@ class _$UpdateCreditCardDetailsImpl implements _UpdateCreditCardDetails {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, index, cardNumber, cardHolder,
-      securityCode, expDate, zipCode);
+  int get hashCode => Object.hash(
+      runtimeType, cardNumber, cardHolder, securityCode, expDate, zipCode);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UpdateCreditCardDetailsImplCopyWith<_$UpdateCreditCardDetailsImpl>
-      get copyWith => __$$UpdateCreditCardDetailsImplCopyWithImpl<
-          _$UpdateCreditCardDetailsImpl>(this, _$identity);
+  _$$AddCreditCardImplCopyWith<_$AddCreditCardImpl> get copyWith =>
+      __$$AddCreditCardImplCopyWithImpl<_$AddCreditCardImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int index, String? cardNumber, String? cardHolder,
+    required TResult Function(String? cardNumber, String? cardHolder,
             String? securityCode, String? expDate, String? zipCode)
-        updateCreditCardDetails,
+        addCreditCard,
+    required TResult Function() verifyCreditCard,
   }) {
-    return updateCreditCardDetails(
-        index, cardNumber, cardHolder, securityCode, expDate, zipCode);
+    return addCreditCard(
+        cardNumber, cardHolder, securityCode, expDate, zipCode);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int index, String? cardNumber, String? cardHolder,
+    TResult? Function(String? cardNumber, String? cardHolder,
             String? securityCode, String? expDate, String? zipCode)?
-        updateCreditCardDetails,
+        addCreditCard,
+    TResult? Function()? verifyCreditCard,
   }) {
-    return updateCreditCardDetails?.call(
-        index, cardNumber, cardHolder, securityCode, expDate, zipCode);
+    return addCreditCard?.call(
+        cardNumber, cardHolder, securityCode, expDate, zipCode);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int index, String? cardNumber, String? cardHolder,
+    TResult Function(String? cardNumber, String? cardHolder,
             String? securityCode, String? expDate, String? zipCode)?
-        updateCreditCardDetails,
+        addCreditCard,
+    TResult Function()? verifyCreditCard,
     required TResult orElse(),
   }) {
-    if (updateCreditCardDetails != null) {
-      return updateCreditCardDetails(
-          index, cardNumber, cardHolder, securityCode, expDate, zipCode);
+    if (addCreditCard != null) {
+      return addCreditCard(
+          cardNumber, cardHolder, securityCode, expDate, zipCode);
     }
     return orElse();
   }
@@ -293,78 +230,208 @@ class _$UpdateCreditCardDetailsImpl implements _UpdateCreditCardDetails {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_UpdateCreditCardDetails value)
-        updateCreditCardDetails,
+    required TResult Function(_AddCreditCard value) addCreditCard,
+    required TResult Function(_VerifyCreditCard value) verifyCreditCard,
   }) {
-    return updateCreditCardDetails(this);
+    return addCreditCard(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_UpdateCreditCardDetails value)? updateCreditCardDetails,
+    TResult? Function(_AddCreditCard value)? addCreditCard,
+    TResult? Function(_VerifyCreditCard value)? verifyCreditCard,
   }) {
-    return updateCreditCardDetails?.call(this);
+    return addCreditCard?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_UpdateCreditCardDetails value)? updateCreditCardDetails,
+    TResult Function(_AddCreditCard value)? addCreditCard,
+    TResult Function(_VerifyCreditCard value)? verifyCreditCard,
     required TResult orElse(),
   }) {
-    if (updateCreditCardDetails != null) {
-      return updateCreditCardDetails(this);
+    if (addCreditCard != null) {
+      return addCreditCard(this);
     }
     return orElse();
   }
 }
 
-abstract class _UpdateCreditCardDetails implements CheckOutPageEvent {
-  const factory _UpdateCreditCardDetails(
-      {required final int index,
-      final String? cardNumber,
+abstract class _AddCreditCard implements CheckOutPageEvent {
+  const factory _AddCreditCard(
+      {final String? cardNumber,
       final String? cardHolder,
       final String? securityCode,
       final String? expDate,
-      final String? zipCode}) = _$UpdateCreditCardDetailsImpl;
+      final String? zipCode}) = _$AddCreditCardImpl;
+
+  String? get cardNumber;
+  String? get cardHolder;
+  String? get securityCode;
+  String? get expDate;
+  String? get zipCode;
+  @JsonKey(ignore: true)
+  _$$AddCreditCardImplCopyWith<_$AddCreditCardImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$VerifyCreditCardImplCopyWith<$Res> {
+  factory _$$VerifyCreditCardImplCopyWith(_$VerifyCreditCardImpl value,
+          $Res Function(_$VerifyCreditCardImpl) then) =
+      __$$VerifyCreditCardImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$VerifyCreditCardImplCopyWithImpl<$Res>
+    extends _$CheckOutPageEventCopyWithImpl<$Res, _$VerifyCreditCardImpl>
+    implements _$$VerifyCreditCardImplCopyWith<$Res> {
+  __$$VerifyCreditCardImplCopyWithImpl(_$VerifyCreditCardImpl _value,
+      $Res Function(_$VerifyCreditCardImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$VerifyCreditCardImpl implements _VerifyCreditCard {
+  const _$VerifyCreditCardImpl();
 
   @override
-  int get index;
+  String toString() {
+    return 'CheckOutPageEvent.verifyCreditCard()';
+  }
+
   @override
-  String? get cardNumber;
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$VerifyCreditCardImpl);
+  }
+
   @override
-  String? get cardHolder;
+  int get hashCode => runtimeType.hashCode;
+
   @override
-  String? get securityCode;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? cardNumber, String? cardHolder,
+            String? securityCode, String? expDate, String? zipCode)
+        addCreditCard,
+    required TResult Function() verifyCreditCard,
+  }) {
+    return verifyCreditCard();
+  }
+
   @override
-  String? get expDate;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String? cardNumber, String? cardHolder,
+            String? securityCode, String? expDate, String? zipCode)?
+        addCreditCard,
+    TResult? Function()? verifyCreditCard,
+  }) {
+    return verifyCreditCard?.call();
+  }
+
   @override
-  String? get zipCode;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? cardNumber, String? cardHolder,
+            String? securityCode, String? expDate, String? zipCode)?
+        addCreditCard,
+    TResult Function()? verifyCreditCard,
+    required TResult orElse(),
+  }) {
+    if (verifyCreditCard != null) {
+      return verifyCreditCard();
+    }
+    return orElse();
+  }
+
   @override
-  @JsonKey(ignore: true)
-  _$$UpdateCreditCardDetailsImplCopyWith<_$UpdateCreditCardDetailsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AddCreditCard value) addCreditCard,
+    required TResult Function(_VerifyCreditCard value) verifyCreditCard,
+  }) {
+    return verifyCreditCard(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AddCreditCard value)? addCreditCard,
+    TResult? Function(_VerifyCreditCard value)? verifyCreditCard,
+  }) {
+    return verifyCreditCard?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AddCreditCard value)? addCreditCard,
+    TResult Function(_VerifyCreditCard value)? verifyCreditCard,
+    required TResult orElse(),
+  }) {
+    if (verifyCreditCard != null) {
+      return verifyCreditCard(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _VerifyCreditCard implements CheckOutPageEvent {
+  const factory _VerifyCreditCard() = _$VerifyCreditCardImpl;
 }
 
 /// @nodoc
 mixin _$CheckOutPageState {
   List<CreditCardDetailsModel?> get creditCards =>
       throw _privateConstructorUsedError;
+  bool? get isUserAddingCard => throw _privateConstructorUsedError;
+  int? get selectedCardIndex => throw _privateConstructorUsedError;
+  String? get cardTypeDetected => throw _privateConstructorUsedError;
+  bool? get isCardDetailsFilled => throw _privateConstructorUsedError;
+  bool? get isCardVerificationInitiated => throw _privateConstructorUsedError;
+  bool? get isCardVerificationSuccess => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<CreditCardDetailsModel?> creditCards)
+    required TResult Function(
+            List<CreditCardDetailsModel?> creditCards,
+            bool? isUserAddingCard,
+            int? selectedCardIndex,
+            String? cardTypeDetected,
+            bool? isCardDetailsFilled,
+            bool? isCardVerificationInitiated,
+            bool? isCardVerificationSuccess)
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<CreditCardDetailsModel?> creditCards)? initial,
+    TResult? Function(
+            List<CreditCardDetailsModel?> creditCards,
+            bool? isUserAddingCard,
+            int? selectedCardIndex,
+            String? cardTypeDetected,
+            bool? isCardDetailsFilled,
+            bool? isCardVerificationInitiated,
+            bool? isCardVerificationSuccess)?
+        initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<CreditCardDetailsModel?> creditCards)? initial,
+    TResult Function(
+            List<CreditCardDetailsModel?> creditCards,
+            bool? isUserAddingCard,
+            int? selectedCardIndex,
+            String? cardTypeDetected,
+            bool? isCardDetailsFilled,
+            bool? isCardVerificationInitiated,
+            bool? isCardVerificationSuccess)?
+        initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -396,7 +463,14 @@ abstract class $CheckOutPageStateCopyWith<$Res> {
           CheckOutPageState value, $Res Function(CheckOutPageState) then) =
       _$CheckOutPageStateCopyWithImpl<$Res, CheckOutPageState>;
   @useResult
-  $Res call({List<CreditCardDetailsModel?> creditCards});
+  $Res call(
+      {List<CreditCardDetailsModel?> creditCards,
+      bool? isUserAddingCard,
+      int? selectedCardIndex,
+      String? cardTypeDetected,
+      bool? isCardDetailsFilled,
+      bool? isCardVerificationInitiated,
+      bool? isCardVerificationSuccess});
 }
 
 /// @nodoc
@@ -413,12 +487,42 @@ class _$CheckOutPageStateCopyWithImpl<$Res, $Val extends CheckOutPageState>
   @override
   $Res call({
     Object? creditCards = null,
+    Object? isUserAddingCard = freezed,
+    Object? selectedCardIndex = freezed,
+    Object? cardTypeDetected = freezed,
+    Object? isCardDetailsFilled = freezed,
+    Object? isCardVerificationInitiated = freezed,
+    Object? isCardVerificationSuccess = freezed,
   }) {
     return _then(_value.copyWith(
       creditCards: null == creditCards
           ? _value.creditCards
           : creditCards // ignore: cast_nullable_to_non_nullable
               as List<CreditCardDetailsModel?>,
+      isUserAddingCard: freezed == isUserAddingCard
+          ? _value.isUserAddingCard
+          : isUserAddingCard // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      selectedCardIndex: freezed == selectedCardIndex
+          ? _value.selectedCardIndex
+          : selectedCardIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
+      cardTypeDetected: freezed == cardTypeDetected
+          ? _value.cardTypeDetected
+          : cardTypeDetected // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isCardDetailsFilled: freezed == isCardDetailsFilled
+          ? _value.isCardDetailsFilled
+          : isCardDetailsFilled // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isCardVerificationInitiated: freezed == isCardVerificationInitiated
+          ? _value.isCardVerificationInitiated
+          : isCardVerificationInitiated // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isCardVerificationSuccess: freezed == isCardVerificationSuccess
+          ? _value.isCardVerificationSuccess
+          : isCardVerificationSuccess // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -431,7 +535,14 @@ abstract class _$$InitialImplCopyWith<$Res>
       __$$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<CreditCardDetailsModel?> creditCards});
+  $Res call(
+      {List<CreditCardDetailsModel?> creditCards,
+      bool? isUserAddingCard,
+      int? selectedCardIndex,
+      String? cardTypeDetected,
+      bool? isCardDetailsFilled,
+      bool? isCardVerificationInitiated,
+      bool? isCardVerificationSuccess});
 }
 
 /// @nodoc
@@ -446,12 +557,42 @@ class __$$InitialImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? creditCards = null,
+    Object? isUserAddingCard = freezed,
+    Object? selectedCardIndex = freezed,
+    Object? cardTypeDetected = freezed,
+    Object? isCardDetailsFilled = freezed,
+    Object? isCardVerificationInitiated = freezed,
+    Object? isCardVerificationSuccess = freezed,
   }) {
     return _then(_$InitialImpl(
       creditCards: null == creditCards
           ? _value._creditCards
           : creditCards // ignore: cast_nullable_to_non_nullable
               as List<CreditCardDetailsModel?>,
+      isUserAddingCard: freezed == isUserAddingCard
+          ? _value.isUserAddingCard
+          : isUserAddingCard // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      selectedCardIndex: freezed == selectedCardIndex
+          ? _value.selectedCardIndex
+          : selectedCardIndex // ignore: cast_nullable_to_non_nullable
+              as int?,
+      cardTypeDetected: freezed == cardTypeDetected
+          ? _value.cardTypeDetected
+          : cardTypeDetected // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isCardDetailsFilled: freezed == isCardDetailsFilled
+          ? _value.isCardDetailsFilled
+          : isCardDetailsFilled // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isCardVerificationInitiated: freezed == isCardVerificationInitiated
+          ? _value.isCardVerificationInitiated
+          : isCardVerificationInitiated // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isCardVerificationSuccess: freezed == isCardVerificationSuccess
+          ? _value.isCardVerificationSuccess
+          : isCardVerificationSuccess // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -460,7 +601,13 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 class _$InitialImpl implements _Initial {
   const _$InitialImpl(
-      {required final List<CreditCardDetailsModel?> creditCards})
+      {required final List<CreditCardDetailsModel?> creditCards,
+      this.isUserAddingCard,
+      this.selectedCardIndex,
+      this.cardTypeDetected,
+      this.isCardDetailsFilled,
+      this.isCardVerificationInitiated,
+      this.isCardVerificationSuccess})
       : _creditCards = creditCards;
 
   final List<CreditCardDetailsModel?> _creditCards;
@@ -472,8 +619,21 @@ class _$InitialImpl implements _Initial {
   }
 
   @override
+  final bool? isUserAddingCard;
+  @override
+  final int? selectedCardIndex;
+  @override
+  final String? cardTypeDetected;
+  @override
+  final bool? isCardDetailsFilled;
+  @override
+  final bool? isCardVerificationInitiated;
+  @override
+  final bool? isCardVerificationSuccess;
+
+  @override
   String toString() {
-    return 'CheckOutPageState.initial(creditCards: $creditCards)';
+    return 'CheckOutPageState.initial(creditCards: $creditCards, isUserAddingCard: $isUserAddingCard, selectedCardIndex: $selectedCardIndex, cardTypeDetected: $cardTypeDetected, isCardDetailsFilled: $isCardDetailsFilled, isCardVerificationInitiated: $isCardVerificationInitiated, isCardVerificationSuccess: $isCardVerificationSuccess)';
   }
 
   @override
@@ -482,12 +642,34 @@ class _$InitialImpl implements _Initial {
         (other.runtimeType == runtimeType &&
             other is _$InitialImpl &&
             const DeepCollectionEquality()
-                .equals(other._creditCards, _creditCards));
+                .equals(other._creditCards, _creditCards) &&
+            (identical(other.isUserAddingCard, isUserAddingCard) ||
+                other.isUserAddingCard == isUserAddingCard) &&
+            (identical(other.selectedCardIndex, selectedCardIndex) ||
+                other.selectedCardIndex == selectedCardIndex) &&
+            (identical(other.cardTypeDetected, cardTypeDetected) ||
+                other.cardTypeDetected == cardTypeDetected) &&
+            (identical(other.isCardDetailsFilled, isCardDetailsFilled) ||
+                other.isCardDetailsFilled == isCardDetailsFilled) &&
+            (identical(other.isCardVerificationInitiated,
+                    isCardVerificationInitiated) ||
+                other.isCardVerificationInitiated ==
+                    isCardVerificationInitiated) &&
+            (identical(other.isCardVerificationSuccess,
+                    isCardVerificationSuccess) ||
+                other.isCardVerificationSuccess == isCardVerificationSuccess));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_creditCards));
+      runtimeType,
+      const DeepCollectionEquality().hash(_creditCards),
+      isUserAddingCard,
+      selectedCardIndex,
+      cardTypeDetected,
+      isCardDetailsFilled,
+      isCardVerificationInitiated,
+      isCardVerificationSuccess);
 
   @JsonKey(ignore: true)
   @override
@@ -498,28 +680,72 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(List<CreditCardDetailsModel?> creditCards)
+    required TResult Function(
+            List<CreditCardDetailsModel?> creditCards,
+            bool? isUserAddingCard,
+            int? selectedCardIndex,
+            String? cardTypeDetected,
+            bool? isCardDetailsFilled,
+            bool? isCardVerificationInitiated,
+            bool? isCardVerificationSuccess)
         initial,
   }) {
-    return initial(creditCards);
+    return initial(
+        creditCards,
+        isUserAddingCard,
+        selectedCardIndex,
+        cardTypeDetected,
+        isCardDetailsFilled,
+        isCardVerificationInitiated,
+        isCardVerificationSuccess);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(List<CreditCardDetailsModel?> creditCards)? initial,
+    TResult? Function(
+            List<CreditCardDetailsModel?> creditCards,
+            bool? isUserAddingCard,
+            int? selectedCardIndex,
+            String? cardTypeDetected,
+            bool? isCardDetailsFilled,
+            bool? isCardVerificationInitiated,
+            bool? isCardVerificationSuccess)?
+        initial,
   }) {
-    return initial?.call(creditCards);
+    return initial?.call(
+        creditCards,
+        isUserAddingCard,
+        selectedCardIndex,
+        cardTypeDetected,
+        isCardDetailsFilled,
+        isCardVerificationInitiated,
+        isCardVerificationSuccess);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(List<CreditCardDetailsModel?> creditCards)? initial,
+    TResult Function(
+            List<CreditCardDetailsModel?> creditCards,
+            bool? isUserAddingCard,
+            int? selectedCardIndex,
+            String? cardTypeDetected,
+            bool? isCardDetailsFilled,
+            bool? isCardVerificationInitiated,
+            bool? isCardVerificationSuccess)?
+        initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(creditCards);
+      return initial(
+          creditCards,
+          isUserAddingCard,
+          selectedCardIndex,
+          cardTypeDetected,
+          isCardDetailsFilled,
+          isCardVerificationInitiated,
+          isCardVerificationSuccess);
     }
     return orElse();
   }
@@ -555,11 +781,28 @@ class _$InitialImpl implements _Initial {
 
 abstract class _Initial implements CheckOutPageState {
   const factory _Initial(
-          {required final List<CreditCardDetailsModel?> creditCards}) =
-      _$InitialImpl;
+      {required final List<CreditCardDetailsModel?> creditCards,
+      final bool? isUserAddingCard,
+      final int? selectedCardIndex,
+      final String? cardTypeDetected,
+      final bool? isCardDetailsFilled,
+      final bool? isCardVerificationInitiated,
+      final bool? isCardVerificationSuccess}) = _$InitialImpl;
 
   @override
   List<CreditCardDetailsModel?> get creditCards;
+  @override
+  bool? get isUserAddingCard;
+  @override
+  int? get selectedCardIndex;
+  @override
+  String? get cardTypeDetected;
+  @override
+  bool? get isCardDetailsFilled;
+  @override
+  bool? get isCardVerificationInitiated;
+  @override
+  bool? get isCardVerificationSuccess;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

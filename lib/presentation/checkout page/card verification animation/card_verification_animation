@@ -1,0 +1,40 @@
+import 'package:flutter/material.dart';
+
+
+
+
+class CardVerificationAnimation extends StatelessWidget {
+  const CardVerificationAnimation({
+
+   required this.height,
+    required this.width,
+  }) : super(key: key);
+
+  final double height;
+  final double width;
+
+  @override
+  Widget build(BuildContext context) {
+
+
+    return Container(
+      
+      height: height,
+      width: width,
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: Constants.greenColor,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: FadeTransition(
+        opacity: _cardDetailsFadeInAnimation,
+        child: Center(
+          child: CardInputForm(
+              creditCardWidth: width,
+              creditCardHeight: height,
+              cardIndex: cardIndex),
+        ),
+      ),
+    );
+  }
+}

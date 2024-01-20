@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class CreditCardDetailsModel {
+  int index;
   String? cardNumber;
   String? securityCode;
   String? cardHolder;
@@ -7,6 +8,7 @@ class CreditCardDetailsModel {
   String? zipCode;
   String? cardType;
   CreditCardDetailsModel({
+    required this.index,
     this.cardNumber,
     this.securityCode,
     this.cardHolder,

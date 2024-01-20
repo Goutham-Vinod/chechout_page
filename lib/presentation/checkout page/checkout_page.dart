@@ -1,6 +1,7 @@
 import 'package:checkout_screen_ui/core/constants.dart';
 import 'package:checkout_screen_ui/presentation/checkout%20page/bill/bill.dart';
 import 'package:checkout_screen_ui/presentation/checkout%20page/credit%20card/credit_card.dart';
+import 'package:checkout_screen_ui/presentation/checkout%20page/save%20card%20button/save_card_button.dart';
 
 import 'package:flutter/material.dart';
 
@@ -15,6 +16,7 @@ class CheckoutPage extends StatelessWidget {
     double mediaQueryHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text("Check out"),
         automaticallyImplyLeading: true,
         leading: const Icon(Icons.arrow_back),
@@ -23,10 +25,18 @@ class CheckoutPage extends StatelessWidget {
         child: SingleChildScrollView(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-            SizedBox(height: mediaQueryHeight * 0.015),
-            CreditCard(
-              height: mediaQueryHeight * 0.26,
-              width: mediaQueryWidth * 0.85,
+            // SizedBox(height: mediaQueryHeight * 0.015),
+            Stack(
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: CreditCard(
+                    height: mediaQueryHeight * 0.26,
+                    width: mediaQueryWidth * 0.85,
+                  ),
+                ),
+                const SaveCardButton(),
+              ],
             ),
             SizedBox(height: mediaQueryHeight * 0.025),
             const Bill(),

@@ -18,7 +18,7 @@ class CardType extends StatelessWidget {
           mediaQueryHeight: widget.height, mediaQueryWidth: widget.width),
       child: SlideTransition(
         position: _slideInAnimation,
-        child: Container(
+        child: SizedBox(
           width: widget.width,
           height: widget.height,
           child: Stack(

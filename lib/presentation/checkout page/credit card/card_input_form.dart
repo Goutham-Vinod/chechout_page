@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,6 +27,17 @@ class _CardInputFormState extends State<CardInputForm> {
   final TextEditingController cardHolderController = TextEditingController();
   final TextEditingController expDateController = TextEditingController();
   final TextEditingController zipCodeController = TextEditingController();
+
+  updateCreditCardDetails() {
+    BlocProvider.of<CheckOutPageBloc>(context)
+        .add(CheckOutPageEvent.addCreditCard(
+      cardNumber: cardNumberController.text,
+      cardHolder: cardHolderController.text,
+      expDate: expDateController.text,
+      securityCode: securityCodeController.text,
+      zipCode: zipCodeController.text,
+    ));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,10 +70,7 @@ class _CardInputFormState extends State<CardInputForm> {
                   enableCreditCardNumberFormatting: true,
                   keyboardType: TextInputType.number,
                   onChanged: () {
-                    BlocProvider.of<CheckOutPageBloc>(context).add(
-                        CheckOutPageEvent.updateCreditCardDetails(
-                            index: widget.cardIndex,
-                            cardNumber: cardNumberController.text));
+                    updateCreditCardDetails();
                   },
                 )),
             SizedBox(width: widget.creditCardWidth * 0.05 * 1.28),
@@ -75,10 +82,7 @@ class _CardInputFormState extends State<CardInputForm> {
                   keyboardType: TextInputType.number,
                   maxInputLength: 3,
                   onChanged: () {
-                    BlocProvider.of<CheckOutPageBloc>(context).add(
-                        CheckOutPageEvent.updateCreditCardDetails(
-                            index: widget.cardIndex,
-                            cardNumber: securityCodeController.text));
+                    updateCreditCardDetails();
                   },
                 )),
           ],
@@ -97,10 +101,7 @@ class _CardInputFormState extends State<CardInputForm> {
               controller: cardHolderController,
               keyboardType: TextInputType.name,
               onChanged: () {
-                BlocProvider.of<CheckOutPageBloc>(context).add(
-                    CheckOutPageEvent.updateCreditCardDetails(
-                        index: widget.cardIndex,
-                        cardNumber: cardHolderController.text));
+                updateCreditCardDetails();
               },
             )),
 
@@ -132,10 +133,7 @@ class _CardInputFormState extends State<CardInputForm> {
                   keyboardType: TextInputType.number,
                   hintText: ' MM/YY',
                   onChanged: () {
-                    BlocProvider.of<CheckOutPageBloc>(context).add(
-                        CheckOutPageEvent.updateCreditCardDetails(
-                            index: widget.cardIndex,
-                            cardNumber: expDateController.text));
+                    updateCreditCardDetails();
                   },
                 )),
             SizedBox(width: widget.creditCardWidth * 0.07 * 1.28),
@@ -147,10 +145,7 @@ class _CardInputFormState extends State<CardInputForm> {
                   keyboardType: TextInputType.number,
                   maxInputLength: 5,
                   onChanged: () {
-                    BlocProvider.of<CheckOutPageBloc>(context).add(
-                        CheckOutPageEvent.updateCreditCardDetails(
-                            index: widget.cardIndex,
-                            cardNumber: zipCodeController.text));
+                    updateCreditCardDetails();
                   },
                 )),
           ],

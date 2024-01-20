@@ -1,6 +1,6 @@
-import 'dart:developer';
 import 'package:checkout_screen_ui/application/bloc/check_out_page_bloc.dart';
-import 'package:checkout_screen_ui/presentation/checkout%20page/credit%20card/card%20input%20form/card_input_form.dart';
+import 'package:checkout_screen_ui/presentation/checkout%20page/credit%20card/card_input_form.dart';
+
 import 'package:checkout_screen_ui/presentation/checkout%20page/credit%20card/card_type.dart';
 import 'package:flutter/material.dart';
 import 'package:checkout_screen_ui/core/constants.dart';
@@ -71,7 +71,7 @@ class _CreditCardState extends State<CreditCard> with TickerProviderStateMixin {
 
     return BlocListener<CheckOutPageBloc, CheckOutPageState>(
       listener: (context, state) {
-        if (state.creditCards?[cardIndex]?.cardType == 'visa') {
+        if (state.cardTypeDetected == 'visa') {
           _cardTypeSlideInController.forward();
         }
       },

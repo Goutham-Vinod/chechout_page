@@ -2,12 +2,12 @@ part of 'check_out_page_bloc.dart';
 
 @freezed
 class CheckOutPageEvent with _$CheckOutPageEvent {
-  const factory CheckOutPageEvent.updateCreditCardDetails({
-   required int index,
+  const factory CheckOutPageEvent.addCreditCard({
     String? cardNumber,
     String? cardHolder,
     String? securityCode,
     String? expDate,
     String? zipCode,
-  }) = _UpdateCreditCardDetails;
+  }) = _AddCreditCard;
+  const factory CheckOutPageEvent.verifyCreditCard() = _VerifyCreditCard;
 }
