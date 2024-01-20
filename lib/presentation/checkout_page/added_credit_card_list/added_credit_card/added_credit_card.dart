@@ -4,7 +4,6 @@ import 'package:checkout_screen_ui/presentation/checkout_page/added_credit_card_
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 import 'package:checkout_screen_ui/core/constants.dart';
 
 class AddedCreditCard extends StatelessWidget {
@@ -41,6 +40,13 @@ class AddedCreditCard extends StatelessWidget {
                 ),
               ),
             ),
+            Positioned(
+                bottom: 20,
+                right: 30,
+                child: Image.asset(
+                  'assets/images/visa.png',
+                  scale: 8,
+                )),
           ],
         );
       },
