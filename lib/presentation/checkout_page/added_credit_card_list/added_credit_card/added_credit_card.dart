@@ -1,9 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:checkout_screen_ui/application/check_out_page/check_out_page_bloc.dart';
 import 'package:checkout_screen_ui/presentation/checkout_page/added_credit_card_list/added_credit_card/added_card_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:checkout_screen_ui/application/bloc/check_out_page_bloc.dart';
+
 import 'package:checkout_screen_ui/core/constants.dart';
 
 class AddedCreditCard extends StatelessWidget {

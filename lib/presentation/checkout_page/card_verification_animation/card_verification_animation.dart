@@ -1,4 +1,5 @@
-import 'package:checkout_screen_ui/application/bloc/check_out_page_bloc.dart';
+
+import 'package:checkout_screen_ui/application/check_out_page/check_out_page_bloc.dart';
 import 'package:checkout_screen_ui/core/constants.dart';
 import 'package:checkout_screen_ui/presentation/checkout_page/card_verification_animation/loading_animation.dart';
 import 'package:checkout_screen_ui/presentation/checkout_page/card_verification_animation/verification_sucess.dart';

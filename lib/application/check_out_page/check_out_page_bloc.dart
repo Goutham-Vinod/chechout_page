@@ -81,5 +81,10 @@ class CheckOutPageBloc extends Bloc<CheckOutPageEvent, CheckOutPageState> {
           isCardVerificationInitiated: false,
           isCardVerificationSuccess: false));
     });
+
+    on<_SelectCard>((event, emit) {
+      log('Selected card : ${event.selectedCardIndex}');
+      emit(state.copyWith(selectedCardIndex: event.selectedCardIndex));
+    });
   }
 }

@@ -51,14 +51,14 @@ class CardTypeClipper extends CustomClipper<Rect> {
 
   @override
   Rect getClip(Size size) {
-    // TODO: implement getClip
+  
     return Rect.fromLTWH(mediaQueryWidth * 0.7, mediaQueryHeight * 0.725,
         mediaQueryWidth * 0.30, mediaQueryHeight * 0.25);
   }
 
   @override
   bool shouldReclip(covariant CustomClipper<Rect> oldClipper) {
-    // TODO: implement shouldReclip
+   
     return false;
   }
 }

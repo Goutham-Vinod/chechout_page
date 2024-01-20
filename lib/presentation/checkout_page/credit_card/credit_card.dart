@@ -1,4 +1,5 @@
-import 'package:checkout_screen_ui/application/bloc/check_out_page_bloc.dart';
+
+import 'package:checkout_screen_ui/application/check_out_page/check_out_page_bloc.dart';
 import 'package:checkout_screen_ui/presentation/checkout_page/credit_card/card_input_form.dart';
 import 'package:checkout_screen_ui/presentation/checkout_page/credit_card/card_type.dart';
 import 'package:flutter/material.dart';
@@ -34,11 +35,11 @@ class _CreditCardState extends State<CreditCard> with TickerProviderStateMixin {
       duration: const Duration(milliseconds: 500),
     );
     _cardDetailsFadeInController = AnimationController(
-      vsync: this, // Use the same TickerProvider
+      vsync: this, 
       duration: const Duration(milliseconds: 1500),
     );
     _cardTypeSlideInController = AnimationController(
-      vsync: this, // Use the same TickerProvider
+      vsync: this,
       duration: const Duration(milliseconds: 500),
     );
     _cardZoomInAnimation =

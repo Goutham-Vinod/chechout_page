@@ -22,6 +22,7 @@ mixin _$CheckOutPageEvent {
             String? securityCode, String? expDate, String? zipCode)
         addCreditCard,
     required TResult Function() verifyCreditCard,
+    required TResult Function(int selectedCardIndex) selectCard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$CheckOutPageEvent {
             String? securityCode, String? expDate, String? zipCode)?
         addCreditCard,
     TResult? Function()? verifyCreditCard,
+    TResult? Function(int selectedCardIndex)? selectCard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$CheckOutPageEvent {
             String? securityCode, String? expDate, String? zipCode)?
         addCreditCard,
     TResult Function()? verifyCreditCard,
+    TResult Function(int selectedCardIndex)? selectCard,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -45,18 +48,21 @@ mixin _$CheckOutPageEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_AddCreditCard value) addCreditCard,
     required TResult Function(_VerifyCreditCard value) verifyCreditCard,
+    required TResult Function(_SelectCard value) selectCard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AddCreditCard value)? addCreditCard,
     TResult? Function(_VerifyCreditCard value)? verifyCreditCard,
+    TResult? Function(_SelectCard value)? selectCard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AddCreditCard value)? addCreditCard,
     TResult Function(_VerifyCreditCard value)? verifyCreditCard,
+    TResult Function(_SelectCard value)? selectCard,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -194,6 +200,7 @@ class _$AddCreditCardImpl implements _AddCreditCard {
             String? securityCode, String? expDate, String? zipCode)
         addCreditCard,
     required TResult Function() verifyCreditCard,
+    required TResult Function(int selectedCardIndex) selectCard,
   }) {
     return addCreditCard(
         cardNumber, cardHolder, securityCode, expDate, zipCode);
@@ -206,6 +213,7 @@ class _$AddCreditCardImpl implements _AddCreditCard {
             String? securityCode, String? expDate, String? zipCode)?
         addCreditCard,
     TResult? Function()? verifyCreditCard,
+    TResult? Function(int selectedCardIndex)? selectCard,
   }) {
     return addCreditCard?.call(
         cardNumber, cardHolder, securityCode, expDate, zipCode);
@@ -218,6 +226,7 @@ class _$AddCreditCardImpl implements _AddCreditCard {
             String? securityCode, String? expDate, String? zipCode)?
         addCreditCard,
     TResult Function()? verifyCreditCard,
+    TResult Function(int selectedCardIndex)? selectCard,
     required TResult orElse(),
   }) {
     if (addCreditCard != null) {
@@ -232,6 +241,7 @@ class _$AddCreditCardImpl implements _AddCreditCard {
   TResult map<TResult extends Object?>({
     required TResult Function(_AddCreditCard value) addCreditCard,
     required TResult Function(_VerifyCreditCard value) verifyCreditCard,
+    required TResult Function(_SelectCard value) selectCard,
   }) {
     return addCreditCard(this);
   }
@@ -241,6 +251,7 @@ class _$AddCreditCardImpl implements _AddCreditCard {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AddCreditCard value)? addCreditCard,
     TResult? Function(_VerifyCreditCard value)? verifyCreditCard,
+    TResult? Function(_SelectCard value)? selectCard,
   }) {
     return addCreditCard?.call(this);
   }
@@ -250,6 +261,7 @@ class _$AddCreditCardImpl implements _AddCreditCard {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AddCreditCard value)? addCreditCard,
     TResult Function(_VerifyCreditCard value)? verifyCreditCard,
+    TResult Function(_SelectCard value)? selectCard,
     required TResult orElse(),
   }) {
     if (addCreditCard != null) {
@@ -319,6 +331,7 @@ class _$VerifyCreditCardImpl implements _VerifyCreditCard {
             String? securityCode, String? expDate, String? zipCode)
         addCreditCard,
     required TResult Function() verifyCreditCard,
+    required TResult Function(int selectedCardIndex) selectCard,
   }) {
     return verifyCreditCard();
   }
@@ -330,6 +343,7 @@ class _$VerifyCreditCardImpl implements _VerifyCreditCard {
             String? securityCode, String? expDate, String? zipCode)?
         addCreditCard,
     TResult? Function()? verifyCreditCard,
+    TResult? Function(int selectedCardIndex)? selectCard,
   }) {
     return verifyCreditCard?.call();
   }
@@ -341,6 +355,7 @@ class _$VerifyCreditCardImpl implements _VerifyCreditCard {
             String? securityCode, String? expDate, String? zipCode)?
         addCreditCard,
     TResult Function()? verifyCreditCard,
+    TResult Function(int selectedCardIndex)? selectCard,
     required TResult orElse(),
   }) {
     if (verifyCreditCard != null) {
@@ -354,6 +369,7 @@ class _$VerifyCreditCardImpl implements _VerifyCreditCard {
   TResult map<TResult extends Object?>({
     required TResult Function(_AddCreditCard value) addCreditCard,
     required TResult Function(_VerifyCreditCard value) verifyCreditCard,
+    required TResult Function(_SelectCard value) selectCard,
   }) {
     return verifyCreditCard(this);
   }
@@ -363,6 +379,7 @@ class _$VerifyCreditCardImpl implements _VerifyCreditCard {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AddCreditCard value)? addCreditCard,
     TResult? Function(_VerifyCreditCard value)? verifyCreditCard,
+    TResult? Function(_SelectCard value)? selectCard,
   }) {
     return verifyCreditCard?.call(this);
   }
@@ -372,6 +389,7 @@ class _$VerifyCreditCardImpl implements _VerifyCreditCard {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AddCreditCard value)? addCreditCard,
     TResult Function(_VerifyCreditCard value)? verifyCreditCard,
+    TResult Function(_SelectCard value)? selectCard,
     required TResult orElse(),
   }) {
     if (verifyCreditCard != null) {
@@ -383,6 +401,153 @@ class _$VerifyCreditCardImpl implements _VerifyCreditCard {
 
 abstract class _VerifyCreditCard implements CheckOutPageEvent {
   const factory _VerifyCreditCard() = _$VerifyCreditCardImpl;
+}
+
+/// @nodoc
+abstract class _$$SelectCardImplCopyWith<$Res> {
+  factory _$$SelectCardImplCopyWith(
+          _$SelectCardImpl value, $Res Function(_$SelectCardImpl) then) =
+      __$$SelectCardImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int selectedCardIndex});
+}
+
+/// @nodoc
+class __$$SelectCardImplCopyWithImpl<$Res>
+    extends _$CheckOutPageEventCopyWithImpl<$Res, _$SelectCardImpl>
+    implements _$$SelectCardImplCopyWith<$Res> {
+  __$$SelectCardImplCopyWithImpl(
+      _$SelectCardImpl _value, $Res Function(_$SelectCardImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? selectedCardIndex = null,
+  }) {
+    return _then(_$SelectCardImpl(
+      selectedCardIndex: null == selectedCardIndex
+          ? _value.selectedCardIndex
+          : selectedCardIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SelectCardImpl implements _SelectCard {
+  const _$SelectCardImpl({required this.selectedCardIndex});
+
+  @override
+  final int selectedCardIndex;
+
+  @override
+  String toString() {
+    return 'CheckOutPageEvent.selectCard(selectedCardIndex: $selectedCardIndex)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectCardImpl &&
+            (identical(other.selectedCardIndex, selectedCardIndex) ||
+                other.selectedCardIndex == selectedCardIndex));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, selectedCardIndex);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectCardImplCopyWith<_$SelectCardImpl> get copyWith =>
+      __$$SelectCardImplCopyWithImpl<_$SelectCardImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String? cardNumber, String? cardHolder,
+            String? securityCode, String? expDate, String? zipCode)
+        addCreditCard,
+    required TResult Function() verifyCreditCard,
+    required TResult Function(int selectedCardIndex) selectCard,
+  }) {
+    return selectCard(selectedCardIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String? cardNumber, String? cardHolder,
+            String? securityCode, String? expDate, String? zipCode)?
+        addCreditCard,
+    TResult? Function()? verifyCreditCard,
+    TResult? Function(int selectedCardIndex)? selectCard,
+  }) {
+    return selectCard?.call(selectedCardIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String? cardNumber, String? cardHolder,
+            String? securityCode, String? expDate, String? zipCode)?
+        addCreditCard,
+    TResult Function()? verifyCreditCard,
+    TResult Function(int selectedCardIndex)? selectCard,
+    required TResult orElse(),
+  }) {
+    if (selectCard != null) {
+      return selectCard(selectedCardIndex);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AddCreditCard value) addCreditCard,
+    required TResult Function(_VerifyCreditCard value) verifyCreditCard,
+    required TResult Function(_SelectCard value) selectCard,
+  }) {
+    return selectCard(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AddCreditCard value)? addCreditCard,
+    TResult? Function(_VerifyCreditCard value)? verifyCreditCard,
+    TResult? Function(_SelectCard value)? selectCard,
+  }) {
+    return selectCard?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AddCreditCard value)? addCreditCard,
+    TResult Function(_VerifyCreditCard value)? verifyCreditCard,
+    TResult Function(_SelectCard value)? selectCard,
+    required TResult orElse(),
+  }) {
+    if (selectCard != null) {
+      return selectCard(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SelectCard implements CheckOutPageEvent {
+  const factory _SelectCard({required final int selectedCardIndex}) =
+      _$SelectCardImpl;
+
+  int get selectedCardIndex;
+  @JsonKey(ignore: true)
+  _$$SelectCardImplCopyWith<_$SelectCardImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

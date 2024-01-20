@@ -10,4 +10,5 @@ class CheckOutPageEvent with _$CheckOutPageEvent {
     String? zipCode,
   }) = _AddCreditCard;
   const factory CheckOutPageEvent.verifyCreditCard() = _VerifyCreditCard;
+  const factory CheckOutPageEvent.selectCard({required int selectedCardIndex}) = _SelectCard;
 }
