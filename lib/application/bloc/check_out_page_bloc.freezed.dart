@@ -16,43 +16,48 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CheckOutPageEvent {
-  double get mediaQueryWidth => throw _privateConstructorUsedError;
-  double get mediaQueryHeight => throw _privateConstructorUsedError;
+  int get index => throw _privateConstructorUsedError;
+  String? get cardNumber => throw _privateConstructorUsedError;
+  String? get cardHolder => throw _privateConstructorUsedError;
+  String? get securityCode => throw _privateConstructorUsedError;
+  String? get expDate => throw _privateConstructorUsedError;
+  String? get zipCode => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(double mediaQueryWidth, double mediaQueryHeight)
-        creditCardZoomInAnimation,
+    required TResult Function(int index, String? cardNumber, String? cardHolder,
+            String? securityCode, String? expDate, String? zipCode)
+        updateCreditCardDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(double mediaQueryWidth, double mediaQueryHeight)?
-        creditCardZoomInAnimation,
+    TResult? Function(int index, String? cardNumber, String? cardHolder,
+            String? securityCode, String? expDate, String? zipCode)?
+        updateCreditCardDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(double mediaQueryWidth, double mediaQueryHeight)?
-        creditCardZoomInAnimation,
+    TResult Function(int index, String? cardNumber, String? cardHolder,
+            String? securityCode, String? expDate, String? zipCode)?
+        updateCreditCardDetails,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CreditCardZoomInAnimation value)
-        creditCardZoomInAnimation,
+    required TResult Function(_UpdateCreditCardDetails value)
+        updateCreditCardDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CreditCardZoomInAnimation value)?
-        creditCardZoomInAnimation,
+    TResult? Function(_UpdateCreditCardDetails value)? updateCreditCardDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CreditCardZoomInAnimation value)?
-        creditCardZoomInAnimation,
+    TResult Function(_UpdateCreditCardDetails value)? updateCreditCardDetails,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,7 +73,13 @@ abstract class $CheckOutPageEventCopyWith<$Res> {
           CheckOutPageEvent value, $Res Function(CheckOutPageEvent) then) =
       _$CheckOutPageEventCopyWithImpl<$Res, CheckOutPageEvent>;
   @useResult
-  $Res call({double mediaQueryWidth, double mediaQueryHeight});
+  $Res call(
+      {int index,
+      String? cardNumber,
+      String? cardHolder,
+      String? securityCode,
+      String? expDate,
+      String? zipCode});
 }
 
 /// @nodoc
@@ -84,128 +95,197 @@ class _$CheckOutPageEventCopyWithImpl<$Res, $Val extends CheckOutPageEvent>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mediaQueryWidth = null,
-    Object? mediaQueryHeight = null,
+    Object? index = null,
+    Object? cardNumber = freezed,
+    Object? cardHolder = freezed,
+    Object? securityCode = freezed,
+    Object? expDate = freezed,
+    Object? zipCode = freezed,
   }) {
     return _then(_value.copyWith(
-      mediaQueryWidth: null == mediaQueryWidth
-          ? _value.mediaQueryWidth
-          : mediaQueryWidth // ignore: cast_nullable_to_non_nullable
-              as double,
-      mediaQueryHeight: null == mediaQueryHeight
-          ? _value.mediaQueryHeight
-          : mediaQueryHeight // ignore: cast_nullable_to_non_nullable
-              as double,
+      index: null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      cardNumber: freezed == cardNumber
+          ? _value.cardNumber
+          : cardNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cardHolder: freezed == cardHolder
+          ? _value.cardHolder
+          : cardHolder // ignore: cast_nullable_to_non_nullable
+              as String?,
+      securityCode: freezed == securityCode
+          ? _value.securityCode
+          : securityCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      expDate: freezed == expDate
+          ? _value.expDate
+          : expDate // ignore: cast_nullable_to_non_nullable
+              as String?,
+      zipCode: freezed == zipCode
+          ? _value.zipCode
+          : zipCode // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$CreditCardZoomInAnimationImplCopyWith<$Res>
+abstract class _$$UpdateCreditCardDetailsImplCopyWith<$Res>
     implements $CheckOutPageEventCopyWith<$Res> {
-  factory _$$CreditCardZoomInAnimationImplCopyWith(
-          _$CreditCardZoomInAnimationImpl value,
-          $Res Function(_$CreditCardZoomInAnimationImpl) then) =
-      __$$CreditCardZoomInAnimationImplCopyWithImpl<$Res>;
+  factory _$$UpdateCreditCardDetailsImplCopyWith(
+          _$UpdateCreditCardDetailsImpl value,
+          $Res Function(_$UpdateCreditCardDetailsImpl) then) =
+      __$$UpdateCreditCardDetailsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double mediaQueryWidth, double mediaQueryHeight});
+  $Res call(
+      {int index,
+      String? cardNumber,
+      String? cardHolder,
+      String? securityCode,
+      String? expDate,
+      String? zipCode});
 }
 
 /// @nodoc
-class __$$CreditCardZoomInAnimationImplCopyWithImpl<$Res>
-    extends _$CheckOutPageEventCopyWithImpl<$Res,
-        _$CreditCardZoomInAnimationImpl>
-    implements _$$CreditCardZoomInAnimationImplCopyWith<$Res> {
-  __$$CreditCardZoomInAnimationImplCopyWithImpl(
-      _$CreditCardZoomInAnimationImpl _value,
-      $Res Function(_$CreditCardZoomInAnimationImpl) _then)
+class __$$UpdateCreditCardDetailsImplCopyWithImpl<$Res>
+    extends _$CheckOutPageEventCopyWithImpl<$Res, _$UpdateCreditCardDetailsImpl>
+    implements _$$UpdateCreditCardDetailsImplCopyWith<$Res> {
+  __$$UpdateCreditCardDetailsImplCopyWithImpl(
+      _$UpdateCreditCardDetailsImpl _value,
+      $Res Function(_$UpdateCreditCardDetailsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mediaQueryWidth = null,
-    Object? mediaQueryHeight = null,
+    Object? index = null,
+    Object? cardNumber = freezed,
+    Object? cardHolder = freezed,
+    Object? securityCode = freezed,
+    Object? expDate = freezed,
+    Object? zipCode = freezed,
   }) {
-    return _then(_$CreditCardZoomInAnimationImpl(
-      mediaQueryWidth: null == mediaQueryWidth
-          ? _value.mediaQueryWidth
-          : mediaQueryWidth // ignore: cast_nullable_to_non_nullable
-              as double,
-      mediaQueryHeight: null == mediaQueryHeight
-          ? _value.mediaQueryHeight
-          : mediaQueryHeight // ignore: cast_nullable_to_non_nullable
-              as double,
+    return _then(_$UpdateCreditCardDetailsImpl(
+      index: null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      cardNumber: freezed == cardNumber
+          ? _value.cardNumber
+          : cardNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cardHolder: freezed == cardHolder
+          ? _value.cardHolder
+          : cardHolder // ignore: cast_nullable_to_non_nullable
+              as String?,
+      securityCode: freezed == securityCode
+          ? _value.securityCode
+          : securityCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      expDate: freezed == expDate
+          ? _value.expDate
+          : expDate // ignore: cast_nullable_to_non_nullable
+              as String?,
+      zipCode: freezed == zipCode
+          ? _value.zipCode
+          : zipCode // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$CreditCardZoomInAnimationImpl implements _CreditCardZoomInAnimation {
-  const _$CreditCardZoomInAnimationImpl(
-      {required this.mediaQueryWidth, required this.mediaQueryHeight});
+class _$UpdateCreditCardDetailsImpl implements _UpdateCreditCardDetails {
+  const _$UpdateCreditCardDetailsImpl(
+      {required this.index,
+      this.cardNumber,
+      this.cardHolder,
+      this.securityCode,
+      this.expDate,
+      this.zipCode});
 
   @override
-  final double mediaQueryWidth;
+  final int index;
   @override
-  final double mediaQueryHeight;
+  final String? cardNumber;
+  @override
+  final String? cardHolder;
+  @override
+  final String? securityCode;
+  @override
+  final String? expDate;
+  @override
+  final String? zipCode;
 
   @override
   String toString() {
-    return 'CheckOutPageEvent.creditCardZoomInAnimation(mediaQueryWidth: $mediaQueryWidth, mediaQueryHeight: $mediaQueryHeight)';
+    return 'CheckOutPageEvent.updateCreditCardDetails(index: $index, cardNumber: $cardNumber, cardHolder: $cardHolder, securityCode: $securityCode, expDate: $expDate, zipCode: $zipCode)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CreditCardZoomInAnimationImpl &&
-            (identical(other.mediaQueryWidth, mediaQueryWidth) ||
-                other.mediaQueryWidth == mediaQueryWidth) &&
-            (identical(other.mediaQueryHeight, mediaQueryHeight) ||
-                other.mediaQueryHeight == mediaQueryHeight));
+            other is _$UpdateCreditCardDetailsImpl &&
+            (identical(other.index, index) || other.index == index) &&
+            (identical(other.cardNumber, cardNumber) ||
+                other.cardNumber == cardNumber) &&
+            (identical(other.cardHolder, cardHolder) ||
+                other.cardHolder == cardHolder) &&
+            (identical(other.securityCode, securityCode) ||
+                other.securityCode == securityCode) &&
+            (identical(other.expDate, expDate) || other.expDate == expDate) &&
+            (identical(other.zipCode, zipCode) || other.zipCode == zipCode));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, mediaQueryWidth, mediaQueryHeight);
+  int get hashCode => Object.hash(runtimeType, index, cardNumber, cardHolder,
+      securityCode, expDate, zipCode);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CreditCardZoomInAnimationImplCopyWith<_$CreditCardZoomInAnimationImpl>
-      get copyWith => __$$CreditCardZoomInAnimationImplCopyWithImpl<
-          _$CreditCardZoomInAnimationImpl>(this, _$identity);
+  _$$UpdateCreditCardDetailsImplCopyWith<_$UpdateCreditCardDetailsImpl>
+      get copyWith => __$$UpdateCreditCardDetailsImplCopyWithImpl<
+          _$UpdateCreditCardDetailsImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(double mediaQueryWidth, double mediaQueryHeight)
-        creditCardZoomInAnimation,
+    required TResult Function(int index, String? cardNumber, String? cardHolder,
+            String? securityCode, String? expDate, String? zipCode)
+        updateCreditCardDetails,
   }) {
-    return creditCardZoomInAnimation(mediaQueryWidth, mediaQueryHeight);
+    return updateCreditCardDetails(
+        index, cardNumber, cardHolder, securityCode, expDate, zipCode);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(double mediaQueryWidth, double mediaQueryHeight)?
-        creditCardZoomInAnimation,
+    TResult? Function(int index, String? cardNumber, String? cardHolder,
+            String? securityCode, String? expDate, String? zipCode)?
+        updateCreditCardDetails,
   }) {
-    return creditCardZoomInAnimation?.call(mediaQueryWidth, mediaQueryHeight);
+    return updateCreditCardDetails?.call(
+        index, cardNumber, cardHolder, securityCode, expDate, zipCode);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(double mediaQueryWidth, double mediaQueryHeight)?
-        creditCardZoomInAnimation,
+    TResult Function(int index, String? cardNumber, String? cardHolder,
+            String? securityCode, String? expDate, String? zipCode)?
+        updateCreditCardDetails,
     required TResult orElse(),
   }) {
-    if (creditCardZoomInAnimation != null) {
-      return creditCardZoomInAnimation(mediaQueryWidth, mediaQueryHeight);
+    if (updateCreditCardDetails != null) {
+      return updateCreditCardDetails(
+          index, cardNumber, cardHolder, securityCode, expDate, zipCode);
     }
     return orElse();
   }
@@ -213,75 +293,78 @@ class _$CreditCardZoomInAnimationImpl implements _CreditCardZoomInAnimation {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CreditCardZoomInAnimation value)
-        creditCardZoomInAnimation,
+    required TResult Function(_UpdateCreditCardDetails value)
+        updateCreditCardDetails,
   }) {
-    return creditCardZoomInAnimation(this);
+    return updateCreditCardDetails(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_CreditCardZoomInAnimation value)?
-        creditCardZoomInAnimation,
+    TResult? Function(_UpdateCreditCardDetails value)? updateCreditCardDetails,
   }) {
-    return creditCardZoomInAnimation?.call(this);
+    return updateCreditCardDetails?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CreditCardZoomInAnimation value)?
-        creditCardZoomInAnimation,
+    TResult Function(_UpdateCreditCardDetails value)? updateCreditCardDetails,
     required TResult orElse(),
   }) {
-    if (creditCardZoomInAnimation != null) {
-      return creditCardZoomInAnimation(this);
+    if (updateCreditCardDetails != null) {
+      return updateCreditCardDetails(this);
     }
     return orElse();
   }
 }
 
-abstract class _CreditCardZoomInAnimation implements CheckOutPageEvent {
-  const factory _CreditCardZoomInAnimation(
-          {required final double mediaQueryWidth,
-          required final double mediaQueryHeight}) =
-      _$CreditCardZoomInAnimationImpl;
+abstract class _UpdateCreditCardDetails implements CheckOutPageEvent {
+  const factory _UpdateCreditCardDetails(
+      {required final int index,
+      final String? cardNumber,
+      final String? cardHolder,
+      final String? securityCode,
+      final String? expDate,
+      final String? zipCode}) = _$UpdateCreditCardDetailsImpl;
 
   @override
-  double get mediaQueryWidth;
+  int get index;
   @override
-  double get mediaQueryHeight;
+  String? get cardNumber;
+  @override
+  String? get cardHolder;
+  @override
+  String? get securityCode;
+  @override
+  String? get expDate;
+  @override
+  String? get zipCode;
   @override
   @JsonKey(ignore: true)
-  _$$CreditCardZoomInAnimationImplCopyWith<_$CreditCardZoomInAnimationImpl>
+  _$$UpdateCreditCardDetailsImplCopyWith<_$UpdateCreditCardDetailsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$CheckOutPageState {
-  double get creditCardWidth => throw _privateConstructorUsedError;
-  double get creditCardHeight => throw _privateConstructorUsedError;
-  double get creditCardContentOpacy => throw _privateConstructorUsedError;
+  List<CreditCardDetailsModel?> get creditCards =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(double creditCardWidth, double creditCardHeight,
-            double creditCardContentOpacy)
+    required TResult Function(List<CreditCardDetailsModel?> creditCards)
         initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(double creditCardWidth, double creditCardHeight,
-            double creditCardContentOpacy)?
-        initial,
+    TResult? Function(List<CreditCardDetailsModel?> creditCards)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(double creditCardWidth, double creditCardHeight,
-            double creditCardContentOpacy)?
-        initial,
+    TResult Function(List<CreditCardDetailsModel?> creditCards)? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -313,10 +396,7 @@ abstract class $CheckOutPageStateCopyWith<$Res> {
           CheckOutPageState value, $Res Function(CheckOutPageState) then) =
       _$CheckOutPageStateCopyWithImpl<$Res, CheckOutPageState>;
   @useResult
-  $Res call(
-      {double creditCardWidth,
-      double creditCardHeight,
-      double creditCardContentOpacy});
+  $Res call({List<CreditCardDetailsModel?> creditCards});
 }
 
 /// @nodoc
@@ -332,23 +412,13 @@ class _$CheckOutPageStateCopyWithImpl<$Res, $Val extends CheckOutPageState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? creditCardWidth = null,
-    Object? creditCardHeight = null,
-    Object? creditCardContentOpacy = null,
+    Object? creditCards = null,
   }) {
     return _then(_value.copyWith(
-      creditCardWidth: null == creditCardWidth
-          ? _value.creditCardWidth
-          : creditCardWidth // ignore: cast_nullable_to_non_nullable
-              as double,
-      creditCardHeight: null == creditCardHeight
-          ? _value.creditCardHeight
-          : creditCardHeight // ignore: cast_nullable_to_non_nullable
-              as double,
-      creditCardContentOpacy: null == creditCardContentOpacy
-          ? _value.creditCardContentOpacy
-          : creditCardContentOpacy // ignore: cast_nullable_to_non_nullable
-              as double,
+      creditCards: null == creditCards
+          ? _value.creditCards
+          : creditCards // ignore: cast_nullable_to_non_nullable
+              as List<CreditCardDetailsModel?>,
     ) as $Val);
   }
 }
@@ -361,10 +431,7 @@ abstract class _$$InitialImplCopyWith<$Res>
       __$$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {double creditCardWidth,
-      double creditCardHeight,
-      double creditCardContentOpacy});
+  $Res call({List<CreditCardDetailsModel?> creditCards});
 }
 
 /// @nodoc
@@ -378,23 +445,13 @@ class __$$InitialImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? creditCardWidth = null,
-    Object? creditCardHeight = null,
-    Object? creditCardContentOpacy = null,
+    Object? creditCards = null,
   }) {
     return _then(_$InitialImpl(
-      creditCardWidth: null == creditCardWidth
-          ? _value.creditCardWidth
-          : creditCardWidth // ignore: cast_nullable_to_non_nullable
-              as double,
-      creditCardHeight: null == creditCardHeight
-          ? _value.creditCardHeight
-          : creditCardHeight // ignore: cast_nullable_to_non_nullable
-              as double,
-      creditCardContentOpacy: null == creditCardContentOpacy
-          ? _value.creditCardContentOpacy
-          : creditCardContentOpacy // ignore: cast_nullable_to_non_nullable
-              as double,
+      creditCards: null == creditCards
+          ? _value._creditCards
+          : creditCards // ignore: cast_nullable_to_non_nullable
+              as List<CreditCardDetailsModel?>,
     ));
   }
 }
@@ -403,20 +460,20 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 class _$InitialImpl implements _Initial {
   const _$InitialImpl(
-      {required this.creditCardWidth,
-      required this.creditCardHeight,
-      required this.creditCardContentOpacy});
+      {required final List<CreditCardDetailsModel?> creditCards})
+      : _creditCards = creditCards;
 
+  final List<CreditCardDetailsModel?> _creditCards;
   @override
-  final double creditCardWidth;
-  @override
-  final double creditCardHeight;
-  @override
-  final double creditCardContentOpacy;
+  List<CreditCardDetailsModel?> get creditCards {
+    if (_creditCards is EqualUnmodifiableListView) return _creditCards;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_creditCards);
+  }
 
   @override
   String toString() {
-    return 'CheckOutPageState.initial(creditCardWidth: $creditCardWidth, creditCardHeight: $creditCardHeight, creditCardContentOpacy: $creditCardContentOpacy)';
+    return 'CheckOutPageState.initial(creditCards: $creditCards)';
   }
 
   @override
@@ -424,17 +481,13 @@ class _$InitialImpl implements _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InitialImpl &&
-            (identical(other.creditCardWidth, creditCardWidth) ||
-                other.creditCardWidth == creditCardWidth) &&
-            (identical(other.creditCardHeight, creditCardHeight) ||
-                other.creditCardHeight == creditCardHeight) &&
-            (identical(other.creditCardContentOpacy, creditCardContentOpacy) ||
-                other.creditCardContentOpacy == creditCardContentOpacy));
+            const DeepCollectionEquality()
+                .equals(other._creditCards, _creditCards));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, creditCardWidth, creditCardHeight, creditCardContentOpacy);
+      runtimeType, const DeepCollectionEquality().hash(_creditCards));
 
   @JsonKey(ignore: true)
   @override
@@ -445,34 +498,28 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(double creditCardWidth, double creditCardHeight,
-            double creditCardContentOpacy)
+    required TResult Function(List<CreditCardDetailsModel?> creditCards)
         initial,
   }) {
-    return initial(creditCardWidth, creditCardHeight, creditCardContentOpacy);
+    return initial(creditCards);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(double creditCardWidth, double creditCardHeight,
-            double creditCardContentOpacy)?
-        initial,
+    TResult? Function(List<CreditCardDetailsModel?> creditCards)? initial,
   }) {
-    return initial?.call(
-        creditCardWidth, creditCardHeight, creditCardContentOpacy);
+    return initial?.call(creditCards);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(double creditCardWidth, double creditCardHeight,
-            double creditCardContentOpacy)?
-        initial,
+    TResult Function(List<CreditCardDetailsModel?> creditCards)? initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(creditCardWidth, creditCardHeight, creditCardContentOpacy);
+      return initial(creditCards);
     }
     return orElse();
   }
@@ -508,16 +555,11 @@ class _$InitialImpl implements _Initial {
 
 abstract class _Initial implements CheckOutPageState {
   const factory _Initial(
-      {required final double creditCardWidth,
-      required final double creditCardHeight,
-      required final double creditCardContentOpacy}) = _$InitialImpl;
+          {required final List<CreditCardDetailsModel?> creditCards}) =
+      _$InitialImpl;
 
   @override
-  double get creditCardWidth;
-  @override
-  double get creditCardHeight;
-  @override
-  double get creditCardContentOpacy;
+  List<CreditCardDetailsModel?> get creditCards;
   @override
   @JsonKey(ignore: true)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>

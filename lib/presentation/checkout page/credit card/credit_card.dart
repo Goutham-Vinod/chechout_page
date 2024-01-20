@@ -1,109 +1,104 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:developer';
+import 'package:checkout_screen_ui/application/bloc/check_out_page_bloc.dart';
+import 'package:checkout_screen_ui/presentation/checkout%20page/credit%20card/card%20input%20form/card_input_form.dart';
+import 'package:checkout_screen_ui/presentation/checkout%20page/credit%20card/card_type.dart';
 import 'package:flutter/material.dart';
-
 import 'package:checkout_screen_ui/core/constants.dart';
-import 'package:checkout_screen_ui/presentation/checkout%20page/credit%20card/custom_text_form_field.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CreditCard extends StatelessWidget {
+class CreditCard extends StatefulWidget {
   const CreditCard({
     Key? key,
     required this.height,
     required this.width,
-    required this.contentOpacy,
   }) : super(key: key);
 
   final double height;
   final double width;
-  final double contentOpacy;
+
+  @override
+  State<CreditCard> createState() => _CreditCardState();
+}
+
+class _CreditCardState extends State<CreditCard> with TickerProviderStateMixin {
+  late AnimationController _cardZoomInController;
+  late AnimationController _cardDetailsFadeInController;
+  late AnimationController _cardTypeSlideInController;
+  late Animation<double> _cardZoomInAnimation;
+  late Animation<double> _cardDetailsFadeInAnimation;
+  late Animation<Offset> _cardTypeSlideInAnimation;
+
+  @override
+  void initState() {
+    _cardZoomInController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
+    _cardDetailsFadeInController = AnimationController(
+      vsync: this, // Use the same TickerProvider
+      duration: const Duration(milliseconds: 1500),
+    );
+    _cardTypeSlideInController = AnimationController(
+      vsync: this, // Use the same TickerProvider
+      duration: const Duration(milliseconds: 500),
+    );
+    _cardZoomInAnimation =
+        CurvedAnimation(parent: _cardZoomInController, curve: Curves.easeInOut);
+    _cardDetailsFadeInAnimation = CurvedAnimation(
+        parent: _cardDetailsFadeInController, curve: Curves.easeInOut);
+    _cardTypeSlideInAnimation =
+        Tween<Offset>(begin: const Offset(0.0, -0.5), end: Offset.zero)
+            .animate(CurvedAnimation(
+      parent: _cardTypeSlideInController,
+      curve: Curves.easeInOut,
+    ));
+    _cardZoomInController.forward();
+    _cardDetailsFadeInController.forward();
+
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _cardZoomInController.dispose();
+    _cardDetailsFadeInController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      width: width,
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: Constants.greenColor,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
+    int cardIndex = 0;
+
+    return BlocListener<CheckOutPageBloc, CheckOutPageState>(
+      listener: (context, state) {
+        if (state.creditCards?[cardIndex]?.cardType == 'visa') {
+          _cardTypeSlideInController.forward();
+        }
+      },
+      child: ScaleTransition(
+        scale: _cardZoomInAnimation,
+        child: Stack(
           children: [
-            //  -----------------------------   line 1 -------------------------------------
-            const Row(
-              children: [
-                Text(
-                  'Credit Card Number',
-                  style: TextStyle(color: Colors.white),
+            Container(
+              height: widget.height,
+              width: widget.width,
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Constants.greenColor,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: FadeTransition(
+                opacity: _cardDetailsFadeInAnimation,
+                child: Center(
+                  child: CardInputForm(
+                      creditCardWidth: widget.width,
+                      creditCardHeight: widget.height,
+                      cardIndex: cardIndex),
                 ),
-                Spacer(),
-                Text(
-                  'Security Code',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
+              ),
             ),
-
-            Row(
-              children: [
-                SizedBox(
-                    width: width * 0.44 * 1.28,
-                    height: height * 0.032 * 4,
-                    child: const CustomTextFormField()),
-                SizedBox(width: width * 0.05 * 1.28),
-                SizedBox(
-                    width: width * 0.16 * 1.28,
-                    height: height * 0.032 * 4,
-                    child: const CustomTextFormField()),
-              ],
-            ),
-            // -----------------------------------------------------------------------------
-            SizedBox(height: height * 0.015 * 4),
-            //  -----------------------------   line 2 -------------------------------------
-            const Text(
-              'Card Holder',
-              style: TextStyle(color: Colors.white),
-            ),
-            SizedBox(
-                width: width * 0.44 * 1.28,
-                height: height * 0.032 * 4,
-                child: const CustomTextFormField()),
-
-            // -----------------------------------------------------------------------------
-            SizedBox(height: height * 0.015 * 4),
-            //  -----------------------------   line 3 -------------------------------------
-            Row(
-              children: [
-                const Text(
-                  'Exp. Date',
-                  style: TextStyle(color: Colors.white),
-                ),
-                SizedBox(width: width * 0.15 * 1.28),
-                const Text(
-                  'Zip Code',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
-            ),
-
-            Row(
-              children: [
-                SizedBox(
-                    width: width * 0.2 * 1.28,
-                    height: height * 0.032 * 4,
-                    child: const CustomTextFormField(
-                      hintText: ' MM/YY',
-                    )),
-                SizedBox(width: width * 0.1 * 1.28),
-                SizedBox(
-                    width: width * 0.2 * 1.28,
-                    height: height * 0.032 * 4,
-                    child: const CustomTextFormField()),
-              ],
-            ),
-            // -----------------------------------------------------------------------------
+            CardType(
+                widget: widget, slideInAnimation: _cardTypeSlideInAnimation),
           ],
         ),
       ),

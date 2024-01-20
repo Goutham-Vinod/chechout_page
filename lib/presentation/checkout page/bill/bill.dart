@@ -12,7 +12,7 @@ class Bill extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Container(
-      height: height * 0.48,
+      height: height * 0.475,
       width: width * 0.85,
       padding: const EdgeInsets.all(30),
       decoration: BoxDecoration(
